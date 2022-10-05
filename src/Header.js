@@ -1,6 +1,5 @@
 import React from "react";
 import "./Header.css";
-import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
@@ -16,31 +15,26 @@ function Header() {
   }
 
   return (
-    <div className="header">
+    <div className="header" id= "header">
       <Link to="/">
         <img
           className="header__logo"
-          src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
+          src="https://previews.dropbox.com/p/thumb/ABpiKij-YD2YGfYwKZ_sXWZ2F7Gxjt-_5D-mU2T-w3LozCjLXlYbyoTHRU1aYXWpFnhCIf3mW1ddtv7V2KC_JoVjxG14OUtkjbzI0xl3lsGXGSZm1cxDtKCbJCKzfGihMkItLhFq3Ci4gTSQFZHC8yn5HTVG9jJkjei8jQVqMINCuptwoR58N22PWYwNxGPErAksB7JMo2ccqA2owGzQdMLD3eRJZq2trwbqXGpLdIF8TVGEN5zuDocLDuNzLwIF0KxSMFGF2xKjNs8Ryc1cVJk51c1KAg_DecSqXyaM9PkJY0Zd_rMWe3VAbHzFD6Z_XZjd6aVIEDabj5aHAD9QkWG4-xoJUlpVMPV-keyaur_YJ5Qk7hBnBArinwhVghiEByE/p.png"
         />
       </Link>
-
-      <div className="header__search">
-        <input className="header__searchInput" type="text" />
-        <SearchIcon className="header__searchIcon" />
-      </div>
 
       <div className="header__nav">
         <Link to={!user && '/login'}>
           <div onClick={handleAuthenticaton} className="header__option">
-            <span className="header__optionLineOne">Hello {!user ? 'Guest' : user.email}</span>
-            <span className="header__optionLineTwo">{user ? 'Sign Out' : 'Sign In'}</span>
+            <span className="header__optionLineOne">Hallo {!user ? 'Pengunjung' : user.email}</span>
+            <span className="header__optionLineTwo">{user ? 'Keluar' : 'Masuk'}</span>
           </div>
         </Link>
 
         <Link to='/orders'>
           <div className="header__option">
-            <span className="header__optionLineOne">Returns</span>
-            <span className="header__optionLineTwo">& Orders</span>
+            <span className="header__optionLineOne">Pesanan</span>
+            <span className="header__optionLineTwo">& Pembayaran</span>
           </div>
         </Link>
         
